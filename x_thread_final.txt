@@ -1,0 +1,70 @@
+🍪 Built CoinGuard — a live wallet + network console for the Cookie Chain SVM.
+
+No build step. No SDK bloat. Three files, ~20KB.
+
+Here's what it does 🧵
+
+—
+
+🔌 WALLET
+
+Connect a Nightly wallet → see your address (linked to the explorer) → see your DOGE balance, live.
+
+—
+
+📡 LIVE NETWORK PANEL (refreshes every 4s)
+
+• epoch + progress bar
+• block height
+• absolute slot
+• cumulative transaction count
+• node core version
+• RPC calls per second
+
+—
+
+✍️ TRANSACTION
+
+Signs a zero-value self-transfer to prove the full path: sign → submit → confirm. Then it links the signature straight to the explorer.
+
+Every failure mode gets a real message — no silent death.
+
+—
+
+💸 THE PART I LIKE MOST
+
+Connecting a wallet, reading your balance, and every network statistic are read-only RPC calls.
+
+They cost nothing.
+
+You can run this entire dashboard — connect, balance, live data — with an empty wallet. Gas only exists if you press send.
+
+—
+
+🪙 WHY COOKIE CHAIN
+
+Sub-second finality.
+Program deploys cost about $0.05.
+SPL + Token-2022 + Metaplex, standard Solana tooling.
+
+Fast and cheap enough to actually experiment on.
+
+—
+
+🐛 TWO BUGS THAT WOULD HAVE SHIPPED SILENTLY
+
+Cookie Chain returns getBalance and getLatestBlockhash with the payload nested under a `value` key.
+
+Dividing the object by 1e9 gives you NaN.
+Reading blockhash off the flat shape means the transaction never sends.
+
+Both fixed, and written up in the README so the next person doesn't lose an afternoon.
+
+—
+
+🔧 ~20KB. index.html, style.css, app.js. Open source, MIT.
+
+Live: https://hamzabellkis.github.io/coinguard/
+Repo: https://github.com/hamzabellkis/coinguard
+
+Try it with an empty wallet — you can do almost everything before you spend anything. 🌱

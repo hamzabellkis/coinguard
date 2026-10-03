@@ -1,0 +1,86 @@
+SUBMISSION — CoinGuard
+========================
+
+App title
+--------
+CoinGuard
+
+Direct link
+-----------
+https://hamzabellkis.github.io/coinguard/
+
+GitHub repository
+-----------------
+https://github.com/hamzabellkis/coinguard
+
+Addresses / programs / tokens
+----------------------------
+None. CoinGuard is a front-end console and deploys no on-chain program, so
+there is no program ID, contract address, or token mint to report. All chain
+interaction happens against the public Cookie Chain RPC at
+https://rpc.cookiescan.io using a Nightly wallet.
+
+----------------------------------------
+SUMMARY
+----------------------------------------
+
+CoinGuard is a live wallet and network console for the Cookie Chain SVM. It
+connects a Nightly wallet, displays the connected address and its DOGE
+balance, tracks the chain in real time, and signs and confirms a transaction
+end to end.
+
+Features (mapping to the required list):
+
+  1. Wallet connect ......... Nightly (or any injected Solana wallet), with
+                               clear handling when no wallet is present or
+                               the user rejects the connection.
+  2. Display address ........ shown truncated, linked to the CookieScan
+                               explorer, with a chain badge.
+  3. Execute a transaction ... signs a zero-value self-transfer, proving the
+                               complete sign -> submit -> confirm path.
+  4. Handle confirmation .... shows a "confirmed" state with the signature
+                               linked to the explorer.
+  5. Error handling ......... distinct, human-readable messages for: no
+                               wallet, rejected connection, RPC unreachable,
+                               insufficient balance for the network fee,
+                               and a failed signature.
+  6. Analytics .............. live network panel: epoch, epoch progress bar,
+                               block height, absolute slot, cumulative
+                               transaction count, node core version and RPC
+                               calls per second, refreshing every 4 seconds.
+
+Cost profile
+------------
+Connecting a wallet, reading an address, reading its balance, and every
+network statistic are read-only RPC calls and cost nothing. Gas is only spent
+when the user chooses to sign a transaction. The dashboard is fully usable
+with an empty wallet.
+
+Technical notes
+---------------
+Built on the Cookie Chain SVM using its RPC endpoint and Solana-compatible
+tooling. Three static files (index.html, style.css, app.js) with no build
+step; @solana/web3.js is loaded from a CDN and is used solely to construct and
+sign the transaction object. No CSS or JS frameworks.
+
+Cookie Chain returns getBalance and getLatestBlockhash with the payload under
+a `value` key. The client unwraps both the flat and nested shapes
+defensively; this is documented in the README.
+
+The RPC endpoint and explorer are single constants at the top of app.js, so
+the console can be pointed at another SVM endpoint without touching any
+other code.
+
+Setup instructions are in the README. Run any static server:
+
+    python3 -m http.server 8000
+
+Cookie Chain
+------------
+Chain:  https://www.cookiechain.wtf
+Docs:   https://docs.cookiechain.wtf
+DAS:    https://api.cookiescan.io
+RPC:    https://rpc.cookiescan.io
+Telegram: https://t.me/TheCookieNetChain
+X: https://x.com/TheCookieChain
+Discord: https://discord.gg/XqnStmWgNu

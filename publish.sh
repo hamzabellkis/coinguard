@@ -14,10 +14,12 @@ if [ -z "$GH_TOKEN" ]; then
   exit 1
 fi
 
-# who am I
-USER=$(curl -sf -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/user | grep -o '"login":"[^"]*"' | head -1 | cut -d'"' -f4)
+# who am i -- GitHub pretty-prints JSON with a space after the colon, so match
+# both shapes rather than assuming the compact form.
+ME=$(curl -sf -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/user)
+USER=$(printf '%s' "$ME" | sed -n 's/.*"login"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1)
 if [ -z "$USER" ]; then
-  echo "Bad GH_TOKEN — GitHub rejected it."
+  echo "Bad GH_TOKEN -- GitHub rejected it."
   exit 1
 fi
 echo "Publishing as: $USER"
