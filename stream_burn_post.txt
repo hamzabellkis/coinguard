@@ -1,0 +1,76 @@
+VERSION 1 — data-first (recommended)
+===================================
+
+STREAM just got a supply cap. Permanently.
+
+The Streamflow Foundation burned 100% of its STREAM — 699.99M tokens, 70% of the total supply.
+
+Supply before: 1,000,000,000
+Supply after: 300,000,000
+
+The part that matters: there is no mint authority. That number can't move again.
+
+Proof on-chain:
+https://solscan.io/tx/4rbViHbmCV35ttMngeC8KBULCMctD7X8mNg3RxfvGwPKyPi7hX8VKpjyJ81AnYuVzzXEsWuNuppcpDY47hnchZNv?cluster=
+
+What remains, as a share of the original supply:
+• 11.47% vesting contracts
+• 11.08% free circulation
+• 4.03% reserves
+• 3.42% active staking rewards
+
+What most burns don't have: a founder who gave back ~90% of his personal allocation — part burned, part returned to the team bucket. All verifiable on-chain.
+
+And this is a token decision, not a product one. Vesting, staking, locks, airdrops, payouts — all unchanged. Use the app.
+
+https://streamflow.foundation/
+
+cc @streamflow_fi
+
+
+======================================================================
+
+VERSION 2 — short and punchy
+===================================
+
+The STREAM burn, in one line:
+
+699.99M tokens gone. Supply capped at 300M. Forever — no mint authority.
+
+That's 70% of supply removed by the Foundation in a single move, plus ~90% of the
+founder's personal allocation returned. All on-chain.
+
+On-chain proof:
+https://solscan.io/tx/4rbViHbmCV35ttMngeC8KBULCMctD7X8mNg3RxfvGwPKyPi7hX8VKpjyJ81AnYuVzzXEsWuNuppcpDY47hnchZNv?cluster=
+
+The product didn't change. Vesting, staking, locks, airdrops, payouts — all as before.
+
+https://streamflow.foundation/
+
+cc @streamflow_fi
+
+
+======================================================================
+
+VERSION 3 — builder's angle
+===================================
+
+A burn is usually theatre: supply goes down, new supply can still be minted.
+
+This one is different.
+
+Streamflow's Foundation burned 699.99M STREAM — 70% of total supply — and there's
+no mint authority behind it. The cap is 300M. Permanently.
+
+Remaining: 11.47% vesting · 11.08% circulating · 4.03% reserves · 3.42% staking rewards.
+
+The founder returned ~90% of his personal allocation too.
+
+https://solscan.io/tx/4rbViHbmCV35ttMngeC8KBULCMctD7X8mNg3RxfvGwPKyPi7hX8VKpjyJ81AnYuVzzXEsWuNuppcpDY47hnchZNv?cluster=
+
+Token decision, not a product retreat — vesting, staking, locks, airdrops and payouts
+all continue unchanged.
+
+https://streamflow.foundation/
+
+cc @streamflow_fi
